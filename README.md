@@ -1,0 +1,1 @@
+"O projeto FluxoDigno tem como intuito facilitar o acesso de pessoas que menstruam a absorventes, rem‚dios e afins, al‚m de tamb‚m fazer a comunica‡Æo entre as pessoas que desejam contribuir na a‡Æo democratizar a sa£de menstrual e os pontos de coleta." 
