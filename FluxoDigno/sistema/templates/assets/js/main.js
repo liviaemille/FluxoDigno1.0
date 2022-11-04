@@ -305,7 +305,7 @@ const horaFechar= document.getElementById('exampleInputHorarioFechar');
 const telefone = document.getElementById('exampleInputTelefone');
 const form1 = document.getElementById('formPontoColeta1');
 const form2 = document.getElementById('formPontoColeta2');
-form1.style.display = 'none';
+form2.style.display = 'none';
 const buttonNext1 = document.getElementById('button-next-1');
 
 form1.addEventListener('submit', (e) => {
@@ -357,7 +357,7 @@ function checkInputsForm2() {
     valideHoraFechar &&
     valideTelefone
   ) {
-    window.location.replace("../sucessoCadastro.html");
+    window.location.replace("./sucessoCadastro.html");
   }
 }
 
