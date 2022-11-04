@@ -7,6 +7,7 @@
 
 :root {
   --color-default: #671002;
+  --color-default-dark: #371002;
   --color-primary: #FAF9F6;
   --color-secondary: #F9D7C4;
 }
@@ -15,6 +16,85 @@
   scroll-behavior: smooth;
 }
 
+/* classes bootstrap */
+
+/* colors */
+.cor-padrao {
+  color: var(--color-default);
+}
+
+.cor-primaria {
+  color: var(--color-primary) !important;
+}
+
+.bg-padrao {
+  background-color: var(--color-default);
+}
+
+.bg-primaria {
+  background-color: var(--color-secondary) !important;
+}
+
+.cor-secundaria {
+  color: var(--color-secondary) !important;
+}
+
+
+/* inputs */
+small {
+  margin-left: 16px;
+  color: #db5a5a;
+  visibility: hidden;
+}
+
+.form-control-lg {
+  border: 2px solid var(--color-default) !important;
+  width: 100%;
+}
+
+.form-control-lg.success {
+  border: 2px solid  #4eca4e !important;
+  width: 100%;
+}
+
+.form-control-lg.error {
+  border: 2px solid #db5a5a !important;
+  width: 100%;
+}
+
+
+.form-control-lg.error + small {
+  visibility: visible;
+}
+
+
+
+/* buttons */
+
+.btn-form {
+  width: 100%;
+}
+
+.btn-primario {
+  background-color: var(--color-default);
+  color: white;
+}
+
+.btn-primario:hover{
+  background-color: #471002;
+  color: white;
+}
+
+
+/* ui */
+form {
+  width: 400px;
+  background-color: white;
+}
+
+
+
+/* template */
 body {
   font-family: var(--font-default);
   color: var(--color-default);
