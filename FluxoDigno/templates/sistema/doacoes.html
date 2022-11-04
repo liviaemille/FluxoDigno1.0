@@ -1,0 +1,51 @@
+{% extends 'sistema/base.html' %}
+{% block content %} 
+
+<div class="" style="width:100vw; height: auto;">
+    <div class="bg-primaria text-end d-flex flex-row-reverse pb-5">
+      <div class="position-absolute top-0 px-3 ">
+        <a href="/index.html" class="">
+          <button type="submit" class="btn btn-primario text-rigth rounded-5 mt-3 px-4">Sair</button>
+        </a>
+      </div>
+      <div style="width: 100%" class="text-center">
+        <img src="/assets/img/LogoEst1.png" alt="" style="min-width:300px;">
+      </div>
+    </div>
+  </div>
+  <div class="position-absolute top-50 start-50 translate-middle mt-5">
+    <div class="d-flex gap-5 mt-5 ">
+      <div class="card rounded-5" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="card-link">Card link</a>
+          <a href="#" class="card-link">Another link</a>
+        </div>
+      </div>
+      
+      <form class="shadow px-4 py-4 rounded-5" id="">
+        <h5 class="text-center mb-3 fw-bold">HORÁRIO DE FUNCIONAMENTO</h5>
+         <div class="mb-1">
+           <label for="exampleInputPix" class="form-label fw-bold">Horário de abertura</label>
+           <input type="time" class="form-control-lg rounded-5" id="exampleInputHorarioAbrir" aria-describedby="emailHelp">
+           <small>Message error</small>
+         </div>
+         <div class="mb-1">
+           <label for="exampleInputPix" class="form-label fw-bold">Horário de fechamento</label>
+           <input type="time" class="form-control-lg rounded-5" id="exampleInputHorarioFechar" aria-describedby="emailHelp">
+           <small>Message error</small>
+         </div>
+         <div class="mb-1">
+           <input placeholder="Telefone" maxlength="11" type="tel" class="form-control-lg rounded-5" id="exampleInputTelefone" aria-describedby="emailHelp">
+           <small>Message error</small>
+         </div>
+        
+         <button type="submit" class="btn btn-lg btn-primario  btn-form rounded-5 mt-2" id="button-next-2">Cadastrar</button>
+       </form>
+    </div>
+  </div>
+
+
+  {% endblock %}

@@ -1,9 +1,9 @@
 from django.db import models
 from django.core.exceptions import ValidationError
 from django.core.validators import MinLengthValidator
-# Create your models here.
 
-def validacao_cpf(cpf):
+
+"""def validacao_cpf(cpf):
     if not cpf.isdigit():
         raise ValidationError('O CPF deve conter apenas números')
 
@@ -16,7 +16,7 @@ class usuarioDoador(models.Model):
     def __str__(self):
         return self.nome
 
-
+"""
 class pontosColeta(models.Model):
     nome = models.CharField(max_length=100)
     bairro = models.CharField(max_length=100)
@@ -33,7 +33,7 @@ class pontosColeta(models.Model):
 
 class Doacoes(models.Model):
     produto = models.CharField(max_length=50)
-    doador = models.ForeignKey("usuarioDoador", on_delete=models.CASCADE)
+   # doador = models.ForeignKey(, on_delete=models.CASCADE)
     data = models.DateField()
     pontocoleta = models.ForeignKey("pontosColeta", on_delete=models.CASCADE)
 

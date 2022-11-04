@@ -1,6 +1,7 @@
 from django import forms
-from .models import usuarioDoador
+from .models import pontosColeta, Doacoes
 
-
-#class CadastrarUsuario(forms.ModelForm):
-   # nome
+class DoacoesForm(forms.ModelForm):
+   class Meta :
+        model = Doacoes
+        fields = ['produto', 'data', 'pontocoleta']
