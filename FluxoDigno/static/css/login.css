@@ -1,0 +1,44 @@
+
+:root {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: "Montserrat", sans-serif;
+    background: #f9d7c4;
+    color: #671002;
+  }
+  
+  a {
+    color: #671002;
+    text-decoration: underline;
+  }
+  
+  a:hover {
+    color: #f9d7c4;
+    text-decoration: none;
+  }
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Zilla Slab", serif;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  #main {
+    margin-top: 60px;
+    padding: 20px 30px;
+    transition: all 0.3s;
+  }
+  
+  @media (max-width: 1199px) {
+    #main {
+      padding: 20px;
+    }
+  }
+ 

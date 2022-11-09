@@ -1,0 +1,87 @@
+{% extends 'sistema/base.html' %}
+
+{% load static %}
+{% block content %}
+  <main id="main" style="background-color: #f9d7c4;">
+    <section id="contact" class="contact">
+        <div class="container" data-aos="fade-up">
+  
+          <div class="section-header">
+            <h2>|Edite sua doação!</h2>
+            <p style="font-size: 25px;">Abaixo você será orientado a como realizar uma doação física</p>
+          </div>
+  
+          <div class="row gx-lg-0 gy-4">
+  
+            <div class="col-lg-4">
+  
+              <div class="info-container d-flex flex-column align-items-center justify-content-center">
+                <img src="{% static '/img/LogoComp.png' %}" class="img-fluid" alt="" data-aos="zoom-out" data-aos-delay="100" style="max-width: 300px; max-height: 300px; width: auto; height: auto;">
+              </div>
+  
+            </div>
+  
+            <div class="col-lg-8">
+              <form action="." method="POST" role="form" class="php-doacao-form">
+                <div class="row">
+                  {% csrf_token %}
+                  {{form.as_p}}
+                  <!--<div class="col-md-6 form-group">
+                    <input type="text" name="name" class="form-control" id="name" placeholder="Qual o seu nome?" required>
+                  </div>
+                  <div class="col-md-6 form-group mt-3 mt-md-0">
+                    {{form.produto}}
+                  </div>
+                </div>
+                <div class="form-group mt-3">
+                    <label>Para qual posto vai sua doação?</label>
+                      {{form.pontocoleta}}
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                  {{ form.data }}
+                  </div>-->
+                <div class="my-3">
+                  <div class="loading">Carregando</div>
+                  <div class="error-message"></div>
+                  <div class="sent-message">Sua doação foi agendada, obrigada!</div>
+                </div>
+                <div class="text-center">
+                  <button class="btn btn-primary" type="submit">Editar</button>
+                </div>
+              </form>
+            </div>
+  
+          </div>
+
+          <div class="section-header">
+            <h2></h2>
+            <p style="font-size: 25px;">Abaixo você será orientado a como realizar uma doação em dinheiro</p>
+          </div>
+  
+          <div class="row gx-lg-0 gy-4">
+  
+            <div class="col-lg-4">
+  
+              <div class="info-container d-flex flex-column align-items-center justify-content-center">
+                <img src="{% static '/img/LogoComp.png' %}" class="img-fluid" alt="" data-aos="zoom-out" data-aos-delay="100" style="max-width: 300px; max-height: 300px; width: auto; height: auto;">
+              </div>
+  
+            </div>
+  
+            <div class="col-lg-8">
+                <form action="forms/contact.php" method="post" role="form" class="php-doacao-form">
+                <div class="row">
+                  <p style="font-size: 22px;">As doações em dinheiro ocorrem por meio de pix. Você pode visualizar as informações dos postos de coleta para escolher aquele que desejar e então transferir para o Pix  do local.</p>
+                </div>
+                <div class="text-center"><a href="{% url 'lista_pontoscoleta' %}"><input type="button" onclick="location.href=''" value="Visualizar postos"></a></div>
+                </form>
+            </div>
+  
+          </div>
+  
+        </div>
+      </section>
+
+  </main>
+
+  {% endblock %}

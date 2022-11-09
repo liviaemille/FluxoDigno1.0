@@ -26,9 +26,9 @@ SECRET_KEY = 'django-insecure-%wgvh(x5hx*)p%w5(-!3lndoqad5=s435+jcew_y_)b@92yg9^
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['''192.168.0.27','fluxodigno.com.br''']
+ALLOWED_HOSTS = []
 
-
+#"127.0.0.1", "192.168.0.27", "fluxodigno.com.br"
 # Application definition
 
 INSTALLED_APPS = [
@@ -38,14 +38,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django.contrib.sites',
-    'allauth',
-    'allauth.account',
-    'allauth.socialaccount',
     'sistema',
+    'conta',
 ]
 
-SITE_ID = 1
+''''django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount','''
+#SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -75,6 +76,8 @@ TEMPLATES = [
     },
 ]
 
+STATICFILES_DIRS = [ os.path.join(BASE_DIR, 'static'), ]
+
 WSGI_APPLICATION = 'FluxoDigno.wsgi.application'
 
 
@@ -89,7 +92,7 @@ DATABASES = {
 }
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
-    'allauth.account.auth_backends.AuthenticationBackend',
+    #'allauth.account.auth_backends.AuthenticationBackend',
 ]
 
 # Password validation
@@ -114,7 +117,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'pt-br'
 
 TIME_ZONE = 'UTC'
 
@@ -128,9 +131,9 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-ACCOUNT_LOGOUT_REDIRECT_URL ='/accounts/login/'
+ACCOUNT_LOGOUT_REDIRECT_URL ='/conta/login/'
 
-LOGIN_REDIRECT_URL = 'fluxodigno/'
+LOGIN_REDIRECT_URL = 'home/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field

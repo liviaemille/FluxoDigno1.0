@@ -1,6 +1,7 @@
 from django.db import models
 from django.core.exceptions import ValidationError
 from django.core.validators import MinLengthValidator
+from django.contrib.auth.models import User
 
 
 """def validacao_cpf(cpf):
@@ -24,7 +25,7 @@ class pontosColeta(models.Model):
     numero = models.CharField(max_length=10)
     descricao = models.CharField(max_length=100, null=False)
     pix = models.CharField(max_length=100, null=False)
-    telefone = models.CharField(max_length=11)
+    telefone = models.CharField(max_length=11, null=True, blank=True, default=None)
     horaAbertura = models.TimeField(auto_now=False, auto_now_add=False, default="00:00")
     horaFechamento = models.TimeField(auto_now=False, auto_now_add=False, default="00:00")
 
@@ -33,9 +34,9 @@ class pontosColeta(models.Model):
 
 class Doacoes(models.Model):
     produto = models.CharField(max_length=50)
-   # doador = models.ForeignKey(, on_delete=models.CASCADE)
+    doador = models.ForeignKey(User, on_delete=models.CASCADE)
     data = models.DateField()
-    pontocoleta = models.ForeignKey("pontosColeta", on_delete=models.CASCADE)
+    pontocoleta = models.ForeignKey(pontosColeta, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.produto

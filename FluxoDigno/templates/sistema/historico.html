@@ -1,0 +1,59 @@
+{% extends 'sistema/base_table.html' %}
+{%load static%}
+
+{% block content %}
+                <div class="panel">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col col-sm-3 col-xs-12" style="width: 90%;">
+                                <h4 class="title">Veja as doações dessa semana</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-body table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Doador</th>
+                                    <th>Nome do Posto</th>
+                                    <th>Data da doação</th>
+                                    <th>Produto doado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for doacao in doacoes %}
+                                <tr>
+                                    <td>{{ doacao.id }}</td>
+                                    <td>{{ doacao.doador }}</td>
+                                    <td>{{doacao.pontocoleta }}</td>
+                                    <td>{{doacao.data}}</td>
+                                    <td>{{doacao.produto}}
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="panel-footer">
+                        <div class="row">
+                            <!--<div class="col col-sm-6 col-xs-6">Mostrando páginas <b>5</b> de <b>25</b></div>
+                            <div class="col-sm-6 col-xs-6">
+                                <ul class="pagination hidden-xs pull-right">
+                                    <li><a href="#"><</a></li>
+                                    <li class="active"><a href="#">1</a></li>
+                                    <li><a href="#">2</a></li>
+                                    <li><a href="#">3</a></li>
+                                    <li><a href="#">4</a></li>
+                                    <li><a href="#">5</a></li>
+                                    <li><a href="#">></a></li>
+                                </ul>
+                                <ul class="pagination visible-xs pull-right">
+                                    <li><a href="#"><</a></li>
+                                    <li><a href="#">></a></li>
+                                </ul>
+                            </div>-->
+                        </div>
+                    </div>
+                </div>
+{% endblock %}   

@@ -70,11 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const mobileNavHide = document.querySelector('.mobile-nav-hide');
 
   document.querySelectorAll('.mobile-nav-toggle').forEach(el => {
-<<<<<<< HEAD:FluxoDigno/templates/sistema/assets/js/main.js
     el.addEventListener('click', function(event) {
-=======
-    el.addEventListener('click', function (event) {
->>>>>>> eaa63c1fd0463413ba9910df95e52e639e4775d6:FluxoDigno/sistema/templates/assets/js/main.js
       event.preventDefault();
       mobileNavToogle();
     })
@@ -110,11 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const navDropdowns = document.querySelectorAll('.navbar .dropdown > a');
 
   navDropdowns.forEach(el => {
-<<<<<<< HEAD:FluxoDigno/templates/sistema/assets/js/main.js
     el.addEventListener('click', function(event) {
-=======
-    el.addEventListener('click', function (event) {
->>>>>>> eaa63c1fd0463413ba9910df95e52e639e4775d6:FluxoDigno/sistema/templates/assets/js/main.js
       if (document.querySelector('.mobile-nav-active')) {
         event.preventDefault();
         this.classList.toggle('active');
@@ -139,11 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
    */
   const scrollTop = document.querySelector('.scroll-top');
   if (scrollTop) {
-<<<<<<< HEAD:FluxoDigno/templates/sistema/assets/js/main.js
     const togglescrollTop = function() {
-=======
-    const togglescrollTop = function () {
->>>>>>> eaa63c1fd0463413ba9910df95e52e639e4775d6:FluxoDigno/sistema/templates/assets/js/main.js
       window.scrollY > 100 ? scrollTop.classList.add('active') : scrollTop.classList.remove('active');
     }
     window.addEventListener('load', togglescrollTop);
@@ -269,13 +257,8 @@ document.addEventListener('DOMContentLoaded', () => {
       });
 
       let menuFilters = document.querySelectorAll('.portfolio-isotope .portfolio-flters li');
-<<<<<<< HEAD:FluxoDigno/templates/sistema/assets/js/main.js
       menuFilters.forEach(function(el) {
         el.addEventListener('click', function() {
-=======
-      menuFilters.forEach(function (el) {
-        el.addEventListener('click', function () {
->>>>>>> eaa63c1fd0463413ba9910df95e52e639e4775d6:FluxoDigno/sistema/templates/assets/js/main.js
           document.querySelector('.portfolio-isotope .portfolio-flters .filter-active').classList.remove('filter-active');
           this.classList.add('filter-active');
           portfolioIsotope.arrange({
@@ -306,100 +289,4 @@ document.addEventListener('DOMContentLoaded', () => {
     aos_init();
   });
 
-<<<<<<< HEAD:FluxoDigno/templates/sistema/assets/js/main.js
 });
-=======
-});
-
-
-/* 
-* Proximo formulário Cadastro de Ponto de Coleta
-*/
-const nomePosto = document.getElementById('exampleInputNomePosto');
-const bairro = document.getElementById('exampleInputBairro');
-const rua = document.getElementById('exampleInputRua');
-const numero = document.getElementById('exampleInputNumero');
-const pix = document.getElementById('exampleInputPix');
-const horaAbrir = document.getElementById('exampleInputHorarioAbrir');
-const horaFechar= document.getElementById('exampleInputHorarioFechar');
-const telefone = document.getElementById('exampleInputTelefone');
-const form1 = document.getElementById('formPontoColeta1');
-const form2 = document.getElementById('formPontoColeta2');
-form2.style.display = 'none';
-const buttonNext1 = document.getElementById('button-next-1');
-
-form1.addEventListener('submit', (e) => {
-  e.preventDefault()
-  checkInputsForm1();
-})
-
-form2.addEventListener('submit', (e) => {
-  e.preventDefault()
-  checkInputsForm2();
-})
-
-function checkInputsForm1() {
-  const nomePostoValue = nomePosto.value.trim();
-  const bairroValue = bairro.value.trim();
-  const ruaValue = rua.value.trim();
-  const numeroValue = numero.value.trim();
-  const pixValue = pix.value.trim();
-
-  const valideNomePosto = validateInput(nomePosto, nomePostoValue);
-  const valideBairro = validateInput(bairro, bairroValue);
-  const valideRua = validateInput(rua, ruaValue);
-  const valideNumero = validateInput(numero, numeroValue);
-  const validePix = validateInput(pix, pixValue);
-
-  if (
-    valideNomePosto &&
-    valideBairro &&
-    valideRua &&
-    valideNumero &&
-    validePix
-  ) {
-    form1.style.display = 'none';
-    form2.style.display = 'block';
-  }
-
-}
-function checkInputsForm2() {
-  const horaAbrirValue = horaAbrir.value.trim();
-  const horaFecharValue = horaFechar.value.trim();
-  const telefoneValue = telefone.value.trim();
-
-  const valideHoraAbrir = validateInput(horaAbrir, horaAbrirValue);
-  const valideHoraFechar = validateInput(horaFechar, horaFecharValue);
-  const valideTelefone = validateInput(telefone, telefoneValue);
-
-  if(
-    valideHoraAbrir &&
-    valideHoraFechar &&
-    valideTelefone
-  ) {
-    window.location.replace("./sucessoCadastro.html");
-  }
-}
-
-
-function validateInput(input, value) {
-  if (value === "") {
-    errorValidation(input, "Preencha esse campo")
-    return false;
-  }
-  successValidation(input)
-  return true;
-}
-
-function successValidation(input) {
-  input.classList.remove('error');
-  input.classList.add('success');
-}
-
-function errorValidation(input, message) {
-  const formControl = input.parentElement;
-  formControl.querySelector("small").innerText = message;
-  input.classList.remove('success');
-  input.classList.add('error');
-}
->>>>>>> eaa63c1fd0463413ba9910df95e52e639e4775d6:FluxoDigno/sistema/templates/assets/js/main.js
