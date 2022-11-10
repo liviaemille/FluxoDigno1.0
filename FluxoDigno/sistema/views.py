@@ -2,9 +2,8 @@ from django.shortcuts import render, redirect
 from .forms import DoacoesForm
 from .models import Doacoes, pontosColeta
 from django.http import HttpResponse
-from django.views.generic import ListView, CreateView, UpdateView, DeleteView
+#from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from django import forms
-from django.contrib.auth.models import User
 
 def sobre_nos (request):
     return render(request, "../templates/sistema/sobrenos.html")
@@ -12,12 +11,13 @@ def sobre_nos (request):
 
 def nova_doacao(request):
     form = DoacoesForm(request.POST or None)
-    doador = request.user.id
+    
+    doador = request.user
     if form.is_valid():
         produto = form.cleaned_data['produto']
         data = form.cleaned_data['data']
         pontocoleta = form.cleaned_data['pontocoleta']
-        doacao = Doacoes(produto=produto, data=data, doador=doador, pontocoleta=pontocoleta)
+        doacao = Doacoes.objects.create(produto=produto, data=data, doador=doador, pontocoleta=pontocoleta)
         doacao.save()
         return redirect('/historico')
     return render(request, '../templates/sistema/doacoes_form.html', {'form': form})

@@ -18,9 +18,8 @@ def registro(request):
             if form_registro.is_valid():
                 user = form_registro.save()
                 login(request, user)
-                messages.success(request, "Registration successful." )
                 return redirect("/home")
-            messages.error(request, "Não foi possível realizar cadastro. Tente novamente com iformações válidas!")
+            messages.error(request, "Não foi possível realizar cadastro. Tente novamente com informações válidas!")
         form_registro = NovoUsuarioForm()
         return render(request, "../templates/sistema/registro.html", {"form_registro": form_registro})
 
@@ -78,3 +77,5 @@ def index(request):
         return render(request, '../templates/sistema/index.html')
     else:
         return redirect('/login')
+
+
