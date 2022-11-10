@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .forms import DoacoesForm
+from .forms import DoacoesForm, PontoColetaForm
 from .models import Doacoes, pontosColeta
 from django.http import HttpResponse
 #from django.views.generic import ListView, CreateView, UpdateView, DeleteView
@@ -11,9 +11,9 @@ def sobre_nos (request):
 
 def nova_doacao(request):
     form = DoacoesForm(request.POST or None)
-    
-    doador = request.user
+       
     if form.is_valid():
+        doador = request.user
         produto = form.cleaned_data['produto']
         data = form.cleaned_data['data']
         pontocoleta = form.cleaned_data['pontocoleta']
@@ -49,8 +49,29 @@ def deletar_doacao(request, id):
         doacao.delete()
         return redirect('lista_produtos')
 
-    return render(request, '../templates/sistema/', {'doacao': doacao })
+    return render(request, '../templates/sistema/historico.html')
 
 def ver_pontoscoleta(request):
     pontos = pontosColeta.objects.all()
     return render (request, '../templates/sistema/postos.html', {"pontos": pontos})
+
+def novo_pontocoleta(request):
+    if request.user.is_superuser:
+        form = PontoColetaForm(request.POST or None)
+        if form.is_valid():
+            form.save()
+            return redirect('/pontoscoleta')
+        return render(request, '../templates/sistema/cadastroponto.html', {'form': form})
+    else :
+        return render(request, '../templates/sistema/restricaocadastro.html')
+
+#def editar_pontocoleta(request, id):
+#    ponto = pontosColeta.objects.get(id=id)
+#    form = PontoColetaForm(request.POST or None, instance=ponto)
+#   if form.is_valid():
+
+#        form.save()
+#        return redirect('/pontoscoleta')
+
+#    return render(request, '../templates/sistema/editarponto.html', {'form': form, 'ponto': ponto})
+

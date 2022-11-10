@@ -1,0 +1,20 @@
+{% extends 'sistema/base.html' %}
+
+{%load static %}
+
+{% block content %}
+  <main id="main" style="background-color: #f9d7c4;">
+    <section id="contact" class="contact">
+        <div class="container" data-aos="fade-up">
+            <a href="{% url 'tela_inicio'%}"><button class="btn btn-primary btn-sm" type="button" style="background-color: #671002; border-color: #671002; text-transform: uppercase;"> Voltar</button></a>
+
+            <div class="section-header">
+              <h2>Página Restrita!</h2>
+              <p style="font-size: 25px;">Apenas usuários com permissão podem acessar essa página</p>
+            </div>
+        </div>
+      </section>
+
+  </main>
+
+{% endblock %}

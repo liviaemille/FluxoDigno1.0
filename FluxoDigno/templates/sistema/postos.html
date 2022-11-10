@@ -1,9 +1,12 @@
 {% extends 'sistema/base_table.html' %}
 
 {% block content %}
+
                 <div class="panel">
                     <div class="panel-heading">
+                        
                         <div class="row">
+                            
                             <div class="col col-sm-3 col-xs-12" style="width: 90%;">
                                 <h4 class="title">Conheça os postos de coleta de caicó</h4>
                             </div>
@@ -28,7 +31,7 @@
                                     <td>{{ ponto.nome }}</td>
                                     <td>{{ ponto.rua}}, {{ponto.numero}}, {{ponto.bairro}}</td>
                                     <td>{{ ponto.pix }}</td>
-                                    <td>{{ ponto.horaAbertura}} até {{ ponto.horaFechamento }}</td>
+                                    <td>{{ ponto.horaabertura}} até {{ ponto.horafechamento }}</td>
                                     <td>{{ ponto.telefone }}</td>
                                 </tr>
 
@@ -38,22 +41,7 @@
                     </div>
                     <div class="panel-footer">
                         <div class="row">
-                            <div class="col col-sm-6 col-xs-6">Mostrando páginas <b>5</b> de <b>25</b></div>
-                            <div class="col-sm-6 col-xs-6">
-                                <ul class="pagination hidden-xs pull-right">
-                                    <li><a href="#"><</a></li>
-                                    <li class="active"><a href="#">1</a></li>
-                                    <li><a href="#">2</a></li>
-                                    <li><a href="#">3</a></li>
-                                    <li><a href="#">4</a></li>
-                                    <li><a href="#">5</a></li>
-                                    <li><a href="#">></a></li>
-                                </ul>
-                                <ul class="pagination visible-xs pull-right">
-                                    <li><a href="#"><</a></li>
-                                    <li><a href="#">></a></li>
-                                </ul>
-                            </div>
+                            <a href="{% url 'tela_inicio'%}"><button class="btn btn-primary btn-sm" type="button" style="background-color: #671002; border-color: #671002; text-transform: uppercase;"> Voltar</button></a>
                         </div>
                     </div>
                 </div>

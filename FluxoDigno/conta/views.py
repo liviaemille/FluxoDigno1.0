@@ -21,7 +21,7 @@ def registro(request):
                 return redirect("/home")
             messages.error(request, "Não foi possível realizar cadastro. Tente novamente com informações válidas!")
         form_registro = NovoUsuarioForm()
-        return render(request, "../templates/sistema/registro.html", {"form_registro": form_registro})
+        return render(request, "../templates/conta/registro.html", {"form_registro": form_registro})
 
 
 def entrar(request): 
@@ -43,7 +43,7 @@ def entrar(request):
                 return redirect('/login')
         else :
             form = LoginForm()
-            return render(request, '../templates/sistema/login.html', {'form': form})
+            return render(request, '../templates/conta/login.html', {'form': form})
         
 
 def alterar_senha(request):
@@ -52,17 +52,12 @@ def alterar_senha(request):
         if form.is_valid():
             user = form.save()
             update_session_auth_hash(request, user)
-            
-            messages.success(
-                request, 'Your password was successfully updated!')
             return redirect('/home/')
-        else:
-            messages.warning(
-                request, 'There was an error changing your password!')
+            
     else:
         form = PasswordChangeForm(request.user)
 
-    return render(request, '../templates/sistema/alterarsenha.html', {'form': form})
+    return render(request, '../templates/conta/alterarsenha.html', {'form': form})
 
 
 def sair(request):

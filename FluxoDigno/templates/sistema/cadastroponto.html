@@ -1,0 +1,72 @@
+{% extends 'templates/base.html' %}
+
+{%load static %}
+
+{% block content %}
+  <main id="main" style="background-color: #f9d7c4;">
+    <section id="contact" class="contact">
+        <div class="container" data-aos="fade-up">
+          <a href="{% url 'tela_inicio'%}"><button class="btn btn-primary btn-sm" type="button" style="background-color: #671002; border-color: #671002; text-transform: uppercase;"> Voltar</button></a>
+            <div class="section-header">
+              <h2>Cadastre já um ponto de doação!</h2>
+              <p style="font-size: 25px;">Abaixo você irá realizar o cadastro de um novo posto</p>
+            </div>
+    
+            <div class="row gx-lg-0 gy-4">
+    
+              <div class="col-lg-4">
+    
+                <div class="info-container d-flex flex-column align-items-center justify-content-center">
+                  <img src="{% static 'img/LogoComp.png' %}" class="img-fluid" alt="" data-aos="zoom-out" data-aos-delay="100" style="max-width: 300px; max-height: 300px; width: auto; height: auto;">
+                </div>
+    
+              </div>
+    
+              <div class="col-lg-8">
+                <form action="." method="post" role="form" class="php-doacao-form">
+                  {% csrf_token %}
+                  <div class="row">
+                    <div class="col-md-12 form-group">
+                      <label>Nome</label>
+                      {{form.nome}}
+                    </div>
+                    <div class="col-md-6 form-group mt-3 mt-md-0">
+                      <div class="col-md-12 form-group">
+                        <label>Endereço </label>
+                      {{form.rua}}
+                      {{form.numero}}
+                      {{form.bairro}}</div>
+                      
+                      <div class="col-md-12 form-group">
+                      <label>Telefone para contato</label>
+                      {{form.telefone}}
+                    </div>
+                    </div>
+                    <div class="col-md-6 form-group">
+                      <div class="col-md-12 form-group mt-3 mt-md-0"> 
+                        <label>Chave do PIX</label>
+                        {{form.pix}}
+                    </div>
+                    
+                      <div class="col-md-12 form-group mt-3 mt-md-0">
+                        <label>Horário de funcionamento</label><br>
+                        <label>Abre:</label>
+                        {{form.horaabertura}}
+                        <label for="">Fecha:</label>
+                        {{form.horafechamento}}
+                      </div>
+                    </div>
+                    
+                  </div>
+                  
+                  <div class="text-center"><button type="submit">Cadastrar Posto</button></div>
+                </form>
+              </div>
+    
+            </div>
+        </div>
+      </section>
+
+  </main>
+
+{% endblock %}
